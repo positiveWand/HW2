@@ -25,6 +25,7 @@ $(document).ready(function() {
     }
     else {
       //정상적인 입력인 경우 -> 정상처리
+      $("#test").text($("#joinForm").serialize());
       $.ajax({
         url: "./joinRequest.php",
         type: "post",

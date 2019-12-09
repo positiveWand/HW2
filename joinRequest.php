@@ -4,7 +4,7 @@ $userID = $_POST["userID"]; //유저 아이디
 $userPSW = $_POST["userPSW"]; //유저 비밀번호
 $userFound = false;
 
-$result = "none";
+$result = $request;
 
 
 
@@ -59,7 +59,7 @@ function login($anArray, $anID, $aPSW) {
         $id = $anUser[0];
         $psw = $anUser[1];
 
-        if($id == $anID $psw == $aPSW) {
+        if($id == $anID && $psw == $aPSW) {
             $result = true;
             break;
         }
