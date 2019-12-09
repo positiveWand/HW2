@@ -36,6 +36,7 @@ $(document).ready(function() {
           //사용자 데이터 출력
         }
         else {
+          alert(data);
           alert("로그인 실패");
         }
       });
@@ -68,6 +69,7 @@ $(document).ready(function() {
           alert("회원가입이 완료되었습니다.")
         }
         else {
+          alert(data);
           alert("회원가입 실패");
           alert("아이디가 중복됩니다. 다시 회원가입해주세요.");
         }
