@@ -58,7 +58,7 @@ function findUser($anArray, $anID, $anPSW) {
         $id = $anUser[0];
         $psw = $anUser[1];
 
-        if($id == $anID, $psw == $anPSW) {
+        if($id == $anID && $psw == $anPSW) {
             $result = true;
         }
     }
