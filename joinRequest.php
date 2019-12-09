@@ -26,10 +26,11 @@ $numOfUsers = count($usersArray, 0); //총 유저의 수
 
 
 
-$userFound = findUser($usersArray, $userID, $userPSW);
+$userFound = findUser($usersArray, $userID);
+$loginSuccess = login($usersArray, $userID, $userPSW);
 
 if($request == "Submit") {
-    if($userFound) {
+    if($loginSuccess) {
         $result = "success";
     }
     else {
@@ -51,15 +52,31 @@ if($request == "Submit") {
 
 echo $result; //클라이언트에 정보 전송
 
-function findUser($anArray, $anID, $anPSW) {
+function login($anArray, $anID, $aPSW) {
     $result = false;
 
     foreach($anArray as $anUser) {
         $id = $anUser[0];
         $psw = $anUser[1];
 
-        if($id == $anID && $psw == $anPSW) {
+        if($id == $anID $psw == $aPSW) {
             $result = true;
+            break;
+        }
+    }
+
+    return $result;
+}
+
+function findUser($anArray, $anID) {
+    $result = false;
+
+    foreach($anArray as $anUser) {
+        $id = $anUser[0];
+
+        if($id == $anID) {
+            $result = true;
+            break;
         }
     }
 
