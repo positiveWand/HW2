@@ -17,6 +17,8 @@ while(!feof($userFile)) {
         break;
     }
     $userInfo = explode("||", $anUser); //구분자("||")를 이용해 정보 분리
+    $userInfo[0] = trim($userInfo[0]);
+    $userInfo[1] = trim($userInfo[1]);
     //유저 정보 (index : 0 -> 아이디, index : 1 -> 비밀번호)
     array_push($usersArray, $userInfo);
 }
@@ -34,7 +36,7 @@ if($request == "Submit") {
         $result = "success";
     }
     else {
-        $result = "fail";
+        $result = "${loginSuccess}";
     }
 } else if($request == "Signin") {
     if($userFound) { //이미 등록된 정보 있음(회원가입 실패)
@@ -59,7 +61,7 @@ function login($anArray, $anID, $aPSW) {
         $id = $anUser[0];
         $psw = $anUser[1];
 
-        if($id == $anID && $psw == $aPSW) {
+        if($id == $anID and $psw == $aPSW) {
             $result = true;
             break;
         }
