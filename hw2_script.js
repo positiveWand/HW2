@@ -25,11 +25,11 @@ $(document).ready(function() {
     }
     else {
       //정상적인 입력인 경우 -> 정상처리
-      $("#test").text($("#joinForm").serialize());
+      //$("#test").text($("#joinForm").serialize());
       $.ajax({
         url: "./joinRequest.php",
         type: "post",
-        data: $("#joinForm").serialize(),
+        data: $("#joinForm").serialize()+"&request=Submit",
       }).done(function(data) {
         if(data == "success") {
           alert("로그인 성공");
@@ -63,7 +63,7 @@ $(document).ready(function() {
       $.ajax({
         url: "./joinRequest.php",
         type: "post",
-        data: $("#joinForm").serialize(),
+        data: $("#joinForm").serialize()+"&request=Signin",
       }).done(function(data) {
         if(data == "success") {
           alert("회원가입 성공");
