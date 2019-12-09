@@ -4,7 +4,7 @@ $userID = $_POST["userID"]; //유저 아이디
 $userPSW = $_POST["userPSW"]; //유저 비밀번호
 $userFound = false;
 
-$result = "fail";
+$result = "none";
 
 
 

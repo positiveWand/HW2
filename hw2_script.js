@@ -28,7 +28,7 @@ $(document).ready(function() {
       $.ajax({
         url: "./joinRequest.php",
         type: "post",
-        data: $("joinForm").serialize(),
+        data: $("#joinForm").serialize(),
       }).done(function(data) {
         if(data == "success") {
           alert("로그인 성공");
@@ -61,7 +61,7 @@ $(document).ready(function() {
       $.ajax({
         url: "./joinRequest.php",
         type: "post",
-        data: $("joinForm").serialize(),
+        data: $("#joinForm").serialize(),
       }).done(function(data) {
         if(data == "success") {
           alert("회원가입 성공");
