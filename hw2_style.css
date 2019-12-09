@@ -1,0 +1,57 @@
+#addButton {
+
+}
+
+#joinButton {
+
+}
+
+#logoutButton {
+
+}
+
+#controlDiv {
+}
+
+#leftControl {
+  float: left;
+}
+
+#rightControl {
+  float : right;
+}
+
+#calandarDiv table, #calandarDiv th, #calandarDiv td{
+  border-collapse: collapse;
+}
+
+#calandarDiv table {
+  margin: auto;
+  border: black solid 3px;
+}
+
+#calandarDiv th, #calandarDiv td {
+  text-align: center;
+  border: black solid 1px;
+  width: 200px;
+}
+
+#calandarDiv td {
+  height : 250px;
+}
+
+form table {
+  border-collapse: collapse;
+}
+
+.inputBox {
+  background-color: skyblue;
+  z-index: 1;
+}
+
+div[id=loginBox] {
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  right: 130px;
+}
