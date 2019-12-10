@@ -143,7 +143,7 @@ $(document).ready(function() {
           //로그인 사용자ID 표시
           $("#currentID").text(id);
           //사용자 데이터 출력
-          getCalandar();
+          getAndShowCalandar();
           showCalandar();
         }
         else {
@@ -241,7 +241,7 @@ function validatePSW(aString) {
 }
 
 
-function getCalandar() {
+function getAndShowCalandar() {
   $.ajax({
     url: "./readCalandar.php",
     type: "post",
@@ -273,6 +273,7 @@ function getCalandar() {
     if(!haveData) {
       alert("저장한 데이터가 없습니다.");
     }
+    showCalandar();
   });
 }
 
