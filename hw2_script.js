@@ -4,6 +4,7 @@ var addShown = false;
 var joinShown = false;
 
 var aCalandar = {
+  "userID" : "",
   "Sun" : [],
   "Mon" : [],
   "Tue" : [],
@@ -268,7 +269,9 @@ function getAndShowCalandar() {
         }
       }
     }
+    clearCalandar();
 
+    aCalandar["userID"] = $("#currentID").text();
     if(!haveData) {
       alert("저장한 데이터가 없습니다.");
     }
@@ -304,6 +307,7 @@ function saveCalandar() {
 
 function clearCalandar() {
   aCalandar = {
+    "userID" : "",
     "Sun" : [],
     "Mon" : [],
     "Tue" : [],
@@ -345,7 +349,7 @@ function popWork(workID) {
       for(var j = 0; j < dayWorks.length; j++) {
         if(dayWorks[j]["id"] == workID) {
           targetWork = dayWorks[j];
-          aCalandar.splice(j, 1);
+          aCalandar[days[i]].splice(j, 1);
           return targetWork;
         }
       }
