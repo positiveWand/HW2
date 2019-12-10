@@ -282,13 +282,13 @@ function getAndShowCalandar() {
 }
 
 function showCalandar() {
-  $("#SunList").html(<ul id="SunList"></ul>);
-  $("#MonList").html(<ul id="MonList"></ul>);
-  $("#TueList").html(<ul id="TueList"></ul>);
-  $("#WedList").html(<ul id="WedList"></ul>);
-  $("#ThuList").html(<ul id="ThuList"></ul>);
-  $("#FriList").html(<ul id="FriList"></ul>);
-  $("#SatList").html(<ul id="SatList"></ul>);
+  $("#SunList").html("<ul id=\"SunList\"></ul>");
+  $("#MonList").html("<ul id=\"MonList\"></ul>");
+  $("#TueList").html("<ul id=\"TueList\"></ul>");
+  $("#WedList").html("<ul id=\"WedList\"></ul>");
+  $("#ThuList").html("<ul id=\"ThuList\"></ul>");
+  $("#FriList").html("<ul id=\"FriList\"></ul>");
+  $("#SatList").html("<ul id=\"SatList\"></ul>");
 
   var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
