@@ -1,5 +1,5 @@
 <?php
-$targetJson = json_decode($_POST["targetJson", true]);
+$targetJson = json_decode($_POST["targetJson"], true);
 $userID = $targetJson["userID"];
 $sunList = $targetJson["Sun"];
 $monList = $targetJson["Mon"];
@@ -10,7 +10,7 @@ $friList = $targetJson["Fri"];
 $satList = $targetJson["Sat"];
 
 $dayList = array($sunList, $monList, $tueList, $wedList, $thuList, $friList, $satList);
-
+var_dump($dayList);
 $day = array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
 $count = 0;
 
