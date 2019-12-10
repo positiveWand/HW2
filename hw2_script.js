@@ -54,6 +54,7 @@ $(document).ready(function() {
     alert("로그아웃이 되었습니다.");
     logedIn = false;
     $("#currentID").text("");
+    clearCalandar();
   });
 
   $(document).on("click", ".works", function() {
