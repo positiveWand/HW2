@@ -81,27 +81,6 @@ $(document).ready(function() {
     $(".editBox").show();
   });
 
-  $(".works").attr("draggable", true);
-
-  $(".works").on("dragstart", function(event) {
-    event.originalEvent.dataTransfer.setData("text", event.originalEvent.target.id);
-  });
-  $(".works").on("dragover", function(event) {
-    event.originalEvent.preventDefault();
-  });
-  $(".works").on("drop", function(event) {
-    event.preventDefault();
-    var data = event.originalEvent.dataTransfer.getData("text");
-    event.originalEvent.target.parentNode.insertBefore(document.getElementById(data), target);
-  });
-  $(".data").on("dragover", function(event) {
-    event.originalEvent.preventDefault();
-  });
-  $(".data").on("drop", function(event) {
-    event.preventDefault();
-    var data = event.originalEvent.dataTransfer.getData("text");
-    event.originalEvent.target.childNodes[0].appendChild(document.getElementById(data));
-  });
 
   //$(".updateBox").show();
 
@@ -340,7 +319,7 @@ function showCalandar() {
   $(".works").on("drop", function(event) {
     event.preventDefault();
     var data = event.originalEvent.dataTransfer.getData("text");
-    event.originalEvent.target.parentNode.insertBefore(document.getElementById(data), target);
+    event.originalEvent.target.parentNode.insertBefore(document.getElementById(data), event.originalEvent.target);
   });
   $(".data").on("dragover", function(event) {
     event.originalEvent.preventDefault();
