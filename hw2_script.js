@@ -261,9 +261,11 @@ function getCalandar() {
 
     for(var i = 0; i < 7; i++){
       var dayWorks = jsonData[days[i]];
-      for(var j = 0; j < dayWorks.length; j) {
-        haveData = true;
-        aCalandar[day].push({"id" : id, "title" : title, "description" : description});
+      if(dayWorks != undefined) {
+        for(var j = 0; j < dayWorks.length; j) {
+          haveData = true;
+          aCalandar[day].push({"id" : id, "title" : title, "description" : description});
+        }
       }
     }
 
@@ -278,11 +280,13 @@ function showCalandar() {
 
   for(var i = 0; i < 7; i++){
     var dayWorks = aCalandar[days[i]];
-    for(var j = 0; j < dayWorks.length; j) {
-      var id = dayWorks[j]["id"];
-      var title = dayWorks[j]["title"];
-
-      $("#"+day+"List").append("<li id=\""+id+"\" class=\"works\">"+title+"</li>");
+    if(dayWorks != undefined) {
+      for(var j = 0; j < dayWorks.length; j) {
+        var id = dayWorks[j]["id"];
+        var title = dayWorks[j]["title"];
+  
+        $("#"+day+"List").append("<li id=\""+id+"\" class=\"works\">"+title+"</li>");
+      }
     }
   }
 }
@@ -317,10 +321,12 @@ function findWork(workID) {
 
   for(var i = 0; i < 7; i++){
     var dayWorks = aCalandar[days[i]];
-    for(var j = 0; j < dayWorks.length; j) {
-      if(dayWorks[j]["id"] == workID) {
-        targetWork = dayWorks[j];
-        return targetWork;
+    if(dayWorks != undefined) {
+      for(var j = 0; j < dayWorks.length; j) {
+        if(dayWorks[j]["id"] == workID) {
+          targetWork = dayWorks[j];
+          return targetWork;
+        }
       }
     }
   }
@@ -334,11 +340,13 @@ function popWork(workID) {
 
   for(var i = 0; i < 7; i++){
     var dayWorks = aCalandar[days[i]];
-    for(var j = 0; j < dayWorks.length; j) {
-      if(dayWorks[j]["id"] == workID) {
-        targetWork = dayWorks[j];
-        aCalandar.splice(j, 1);
-        return targetWork;
+    if(dayWorks != undefined) {
+      for(var j = 0; j < dayWorks.length; j) {
+        if(dayWorks[j]["id"] == workID) {
+          targetWork = dayWorks[j];
+          aCalandar.splice(j, 1);
+          return targetWork;
+        }
       }
     }
   }
@@ -352,10 +360,12 @@ function findDay(workID) {
 
   for(var i = 0; i < 7; i++){
     var dayWorks = aCalandar[days[i]];
-    for(var j = 0; j < dayWorks.length; j) {
-      if(dayWorks[j]["id"] == workID) {
-        targetDay = days[i];
-        return targetDay;
+    if(dayWorks != undefined) {
+      for(var j = 0; j < dayWorks.length; j) {
+        if(dayWorks[j]["id"] == workID) {
+          targetDay = days[i];
+          return targetDay;
+        }
       }
     }
   }
