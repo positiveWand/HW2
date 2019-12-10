@@ -1,5 +1,5 @@
 <?php
-$targetJson = json_decode($_POST["targetJson"]);
+$targetJson = json_decode($_POST["targetJson", true]);
 $userID = $targetJson["userID"];
 $sunList = $targetJson["Sun"];
 $monList = $targetJson["Mon"];
