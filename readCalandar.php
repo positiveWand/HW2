@@ -23,11 +23,12 @@ foreach($dayArray as $aDay) {
             break;
         }
         $workInfo = explode("||", $aWork); //구분자("||")를 이용해 정보 분리
-        $workInfo[0] = trim($workInfo[0]);
-        $workInfo[1] = trim($workInfo[1]);
-        $workInfo[2] = trim($workInfo[2]);
+        $dictWork = array();
+        $dictWork["id"] = trim($workInfo[0]);
+        $dictWork["title"] = trim($workInfo[1]);
+        $dictWork["description"] = trim($workInfo[2]);
         //유저 정보 (index : 0 -> 아이디(timestamp), index : 1 -> 제목(title), index : 2 -> 내용(description))
-        array_push($resultJson[$aDay], $workInfo);
+        $resultJson[$aDay] = $dictWork;
     }
     fclose($dayFile);
 }
