@@ -263,7 +263,7 @@ function getCalandar() {
     for(var i = 0; i < 7; i++){
       var dayWorks = jsonData[days[i]];
       if(dayWorks != undefined) {
-        for(var j = 0; j < dayWorks.length; j) {
+        for(var j = 0; j < dayWorks.length; j++) {
           haveData = true;
           aCalandar[days[i]].push({"id" : dayWorks[j]["id"], "title" : dayWorks[j]["title"], "description" : dayWorks[j]["description"]});
         }
@@ -282,7 +282,7 @@ function showCalandar() {
   for(var i = 0; i < 7; i++){
     var dayWorks = aCalandar[days[i]];
     if(dayWorks != undefined) {
-      for(var j = 0; j < dayWorks.length; j) {
+      for(var j = 0; j < dayWorks.length; j++) {
         var id = dayWorks[j]["id"];
         var title = dayWorks[j]["title"];
   
@@ -323,7 +323,7 @@ function findWork(workID) {
   for(var i = 0; i < 7; i++){
     var dayWorks = aCalandar[days[i]];
     if(dayWorks != undefined) {
-      for(var j = 0; j < dayWorks.length; j) {
+      for(var j = 0; j < dayWorks.length; j++) {
         if(dayWorks[j]["id"] == workID) {
           targetWork = dayWorks[j];
           return targetWork;
@@ -342,7 +342,7 @@ function popWork(workID) {
   for(var i = 0; i < 7; i++){
     var dayWorks = aCalandar[days[i]];
     if(dayWorks != undefined) {
-      for(var j = 0; j < dayWorks.length; j) {
+      for(var j = 0; j < dayWorks.length; j++) {
         if(dayWorks[j]["id"] == workID) {
           targetWork = dayWorks[j];
           aCalandar.splice(j, 1);
@@ -362,7 +362,7 @@ function findDay(workID) {
   for(var i = 0; i < 7; i++){
     var dayWorks = aCalandar[days[i]];
     if(dayWorks != undefined) {
-      for(var j = 0; j < dayWorks.length; j) {
+      for(var j = 0; j < dayWorks.length; j++) {
         if(dayWorks[j]["id"] == workID) {
           targetDay = days[i];
           return targetDay;
