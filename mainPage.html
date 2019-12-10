@@ -46,13 +46,13 @@
       </form>
     </div>
 
-    <div class="inputBox updateBox" id="updateBox">
-      <form action="./saveCalandar.php" method="POST" class="inputBox updateBox" id="updateForm">
+    <div class="inputBox editBox" id="editBox">
+      <form action="./saveCalandar.php" method="POST" class="inputBox editBox" id="editForm">
         <table>
           <tr>
             <td>day</td>
             <td>
-              <select name="workDay" id="updateDay">
+              <select name="workDay" id="editDay">
                 <option value="Sun" selected="selected">Sun</option>
                 <option value="Mon">Mon</option>
                 <option value="Tue">Tue</option>
@@ -65,18 +65,18 @@
           </tr>
           <tr>
             <td>title</td>
-            <td><input type="text" name="workTitle" id="updateTitle"></td>
+            <td><input type="text" name="workTitle" id="editTitle"></td>
           </tr>
           <tr>
             <td>description</td>
-            <td><input type="text" name="workDescription" id="updateDescription"></td>
+            <td><input type="text" name="workDescription" id="editDescription"></td>
           </tr>
           <tr>
             <td colspan="2">
-              <input type="button" value="Edit" id="updateEdit" name="request">
-              <input type="button" value="Delete" id="updateDelete" name="request">
-              <input type="button" value="Submit" id="updateSubmit" name="request">
-              <input type="button" value="Cancel" id="updateCancel" name="request">
+              <input type="button" value="Edit" id="editEdit" name="request">
+              <input type="button" value="Delete" id="editDelete" name="request">
+              <input type="button" value="Submit" id="editSubmit" name="request">
+              <input type="button" value="Cancel" id="editCancel" name="request">
             </td>
           </tr>
         </table>

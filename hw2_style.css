@@ -65,7 +65,7 @@ div[id=addBox] {
   left: 70px;
 }
 
-div[id=updateBox] {
+div[id=editBox] {
   border: solid black 1px;
   width: 300px;
   height: 130px;
