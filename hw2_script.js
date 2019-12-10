@@ -83,7 +83,7 @@ $(document).ready(function() {
 
   $(".works").attr("draggable", true);
   $(".works").on("dragstart", function(event) {
-    event.originalEvent.dataTransfer.setData("text", ev.target.id);
+    event.originalEvent.dataTransfer.setData("text", event.originalEvent.target.id);
   });
   $(".works").on("dragover", function(event) {
     event.originalEvent.preventDefault();
