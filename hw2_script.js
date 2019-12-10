@@ -256,6 +256,7 @@ function getCalandar() {
     {"id" : unique key(timestamp), "title" : "할 일 제목", "description" : "할 일 내용"}
     */
    //json파일을 해석하여 1. 달력에 표시, 2. 별도의 저장소에 저장
+    jsonData = JSON.parse(jsonData);
     var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     var haveData = false;
 
@@ -264,7 +265,7 @@ function getCalandar() {
       if(dayWorks != undefined) {
         for(var j = 0; j < dayWorks.length; j) {
           haveData = true;
-          aCalandar[day].push({"id" : id, "title" : title, "description" : description});
+          aCalandar[days[i]].push({"id" : dayWorks[j]["id"], "title" : dayWorks[j]["title"], "description" : dayWorks[j]["description"]});
         }
       }
     }

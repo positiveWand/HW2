@@ -28,7 +28,7 @@ foreach($dayArray as $aDay) {
         $dictWork["title"] = trim($workInfo[1]);
         $dictWork["description"] = trim($workInfo[2]);
         //유저 정보 (index : 0 -> 아이디(timestamp), index : 1 -> 제목(title), index : 2 -> 내용(description))
-        array_push($resultJson[$aDay], $dictWork)
+        array_push($resultJson[$aDay], $dictWork);
     }
     fclose($dayFile);
 }
