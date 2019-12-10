@@ -49,6 +49,12 @@ $(document).ready(function() {
     }
   });
 
+  $("#logoutButton").click(function() {
+    alert("로그아웃이 되었습니다.");
+    logedIn = false;
+    $("#currentID").text("");
+  });
+
   $(".works").click(function() {
     $("#editDay").attr("disabled", true);
     $("#editTitle").attr("disabled", true);
@@ -295,7 +301,17 @@ function saveCalandar() {
 }
 
 function clearCalandar() {
+  aCalandar = {
+    "Sun" : [],
+    "Mon" : [],
+    "Tue" : [],
+    "Wed" : [],
+    "Thu" : [],
+    "Fri" : [],
+    "Sat" : []
+  };
 
+  showCalandar();
 }
 
 function findWork(workID) {
