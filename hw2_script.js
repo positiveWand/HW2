@@ -286,7 +286,7 @@ function showCalandar() {
         var id = dayWorks[j]["id"];
         var title = dayWorks[j]["title"];
   
-        $("#"+day+"List").append("<li id=\""+id+"\" class=\"works\">"+title+"</li>");
+        $("#"+days[i]+"List").append("<li id=\""+id+"\" class=\"works\">"+title+"</li>");
       }
     }
   }
