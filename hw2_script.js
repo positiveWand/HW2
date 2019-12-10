@@ -223,7 +223,7 @@ $(document).ready(function() {
   $("#editSubmit").click(function() {
     currentWork["title"] = $("#editTitle").val();
     currentWork["description"] = $("#editDescription").val();
-    aCalandar[findDay(currentWork["id"])].push(popWork(currentWork["id"]));
+    aCalandar[$("#editDay").val()].push(popWork(currentWork["id"]));
     saveCalandar();
     alert("저장되었습니다.");
     $(".editBox").hide();
