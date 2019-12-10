@@ -73,3 +73,7 @@ div[id=editBox] {
   left: 50%;
   transform: translate(-50%);
 }
+
+.works{
+  z-index: 1;
+}
