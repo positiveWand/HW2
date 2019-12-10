@@ -55,7 +55,7 @@ $(document).ready(function() {
     $("#currentID").text("");
   });
 
-  $(".works").click(function() {
+  $(document).on("click", ".works", function() {
     $("#editDay").attr("disabled", true);
     $("#editTitle").attr("disabled", true);
     $("#editDescription").attr("disabled", true);
@@ -373,3 +373,4 @@ function findDay(workID) {
 
   return targetDay;
 }
+
