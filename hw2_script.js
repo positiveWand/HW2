@@ -288,13 +288,13 @@ function getAndShowCalandar() {
 }
 
 function showCalandar() {
-  $("#SunList").html("<ul id=\"SunList\"></ul>");
-  $("#MonList").html("<ul id=\"MonList\"></ul>");
-  $("#TueList").html("<ul id=\"TueList\"></ul>");
-  $("#WedList").html("<ul id=\"WedList\"></ul>");
-  $("#ThuList").html("<ul id=\"ThuList\"></ul>");
-  $("#FriList").html("<ul id=\"FriList\"></ul>");
-  $("#SatList").html("<ul id=\"SatList\"></ul>");
+  $("#SunList").html("");
+  $("#MonList").html("");
+  $("#TueList").html("");
+  $("#WedList").html("");
+  $("#ThuList").html("");
+  $("#FriList").html("");
+  $("#SatList").html("");
 
   var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -320,6 +320,8 @@ function showCalandar() {
     event.preventDefault();
     var data = event.originalEvent.dataTransfer.getData("text");
     event.originalEvent.target.parentNode.insertBefore(document.getElementById(data), event.originalEvent.target);
+    readCalandar();
+    saveCalandar();
   });
   $(".data").on("dragover", function(event) {
     event.originalEvent.preventDefault();
@@ -329,6 +331,8 @@ function showCalandar() {
       event.preventDefault();
       var data = event.originalEvent.dataTransfer.getData("text");
       event.originalEvent.target.childNodes[0].appendChild(document.getElementById(data));
+      readCalandar();
+      saveCalandar();
     }
   });
 }
@@ -356,6 +360,32 @@ function clearCalandar() {
   };
 
   showCalandar();
+}
+
+function readCalandar() {
+  newCalandar = {
+    "userID" : "",
+    "Sun" : [],
+    "Mon" : [],
+    "Tue" : [],
+    "Wed" : [],
+    "Thu" : [],
+    "Fri" : [],
+    "Sat" : []
+  };
+
+  var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  newCalandar["userID"] = $("#currentID").text(id);
+  for(var i = 0; i < 7; i++){
+    var theDay = document.getElementById(days[i]+"List");
+    var theWorks = theDay.childNodes;
+
+    for(var j = 0; j < theWorks.length; j++) {
+      newCalandar[days[i]].push(findWork(theWorks[j].id));
+    }
+  }
+
+  aCalandar = newCalandar;
 }
 
 function findWork(workID) {
