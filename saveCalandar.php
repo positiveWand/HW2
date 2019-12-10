@@ -25,6 +25,7 @@ foreach($dayList as $aDay) {
         fwrite($calandarFile, $workDescription."\n");
         fclose($calandarFile);
     }
+    $count = $count + 1;
 }
 
 echo "success";
