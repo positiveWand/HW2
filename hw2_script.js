@@ -375,7 +375,7 @@ function readCalandar() {
   };
 
   var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  newCalandar["userID"] = $("#currentID").text(id);
+  newCalandar["userID"] = $("#currentID").text();
   for(var i = 0; i < 7; i++){
     var theDay = document.getElementById(days[i]+"List");
     var theWorks = theDay.childNodes;
