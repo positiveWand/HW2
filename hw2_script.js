@@ -325,9 +325,11 @@ function showCalandar() {
     event.originalEvent.preventDefault();
   });
   $(".data").on("drop", function(event) {
-    event.preventDefault();
-    var data = event.originalEvent.dataTransfer.getData("text");
-    event.originalEvent.target.childNodes[0].appendChild(document.getElementById(data));
+    if(event.originalEvent.target.tagName == "td") {
+      event.preventDefault();
+      var data = event.originalEvent.dataTransfer.getData("text");
+      event.originalEvent.target.childNodes[0].appendChild(document.getElementById(data));
+    }
   });
 }
 
