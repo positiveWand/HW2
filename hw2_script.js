@@ -60,10 +60,10 @@ $(document).ready(function() {
     $("#editTitle").attr("disabled", true);
     $("#editDescription").attr("disabled", true);
 
-    $("$editEdit").attr("disabled",false);
-    $("$editDelete").attr("disabled",false);
+    $("#editEdit").attr("disabled",false);
+    $("#editDelete").attr("disabled",false);
     $("#editSubmit").attr("disabled", true);
-    $("$editCancel").attr("disabled",false);
+    $("#editCancel").attr("disabled",false);
 
     var thisID = $(this).attr("id");
     var thisDay = $(this).parent().attr("id").replace("List", "");
@@ -197,10 +197,10 @@ $(document).ready(function() {
     $("#editTitle").attr("disabled", false);
     $("#editDescription").attr("disabled", false);
 
-    $("$editEdit").attr("disabled",true);
-    $("$editDelete").attr("disabled",true);
+    $("#editEdit").attr("disabled",true);
+    $("#editDelete").attr("disabled",true);
     $("#editSubmit").attr("disabled", false);
-    $("$editCancel").attr("disabled",false);
+    $("#editCancel").attr("disabled",false);
   });
   //"Delete"버튼
   $("#editDelete").click(function() {
