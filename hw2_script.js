@@ -99,6 +99,7 @@ $(document).ready(function() {
     else { //정상적인 입력인 경우
       aCalandar[day].push({"id" : currentDate.getTime(), "title" : title, "description" : description});
       saveCalandar();
+      showCalandar();
       alert("저장되었습니다.");
     }
 
