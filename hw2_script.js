@@ -101,7 +101,7 @@ $(document).ready(function() {
       saveCalandar();
       showCalandar();
       alert("저장되었습니다.");
-      $("#inputDay").val("");
+      $("#inputDay").val("Sun");
       $("#inputTitle").val("");
       $("#inputDescription").val("");
       $(".addBox").hide();
