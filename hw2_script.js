@@ -144,7 +144,6 @@ $(document).ready(function() {
           $("#currentID").text(id);
           //사용자 데이터 출력
           getAndShowCalandar();
-          showCalandar();
         }
         else {
           //alert(data);
