@@ -24,8 +24,8 @@ foreach($dayList as $aDay) {
         fwrite($calandarFile, $workID."||");
         fwrite($calandarFile, $workTitle."||");
         fwrite($calandarFile, $workDescription."\n");
-        fclose($calandarFile);
     }
+    fclose($calandarFile);
     $count = $count + 1;
 }
 
