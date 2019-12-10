@@ -16,7 +16,7 @@ $resultJson = array(
 $dayArray = array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
 
 foreach($dayArray as $aDay) {
-    $dayFile = fopen("./data/".$userID."_".$sDay.".txt", "r");
+    $dayFile = fopen("./data/".$userID."_".$aDay.".txt", "r");
     while(!feof($dayFile)) {
         $aWork = fgets($dayFile); //한 줄(=1명의 유저) 읽기
         if(empty($aWork)) {
