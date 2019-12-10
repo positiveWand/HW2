@@ -101,6 +101,9 @@ $(document).ready(function() {
       saveCalandar();
       showCalandar();
       alert("저장되었습니다.");
+      $("#inputDay").val("");
+      $("#inputTitle").val("");
+      $("#inputDescription").val("");
       $(".addBox").hide();
       addShown = false;
     }
@@ -219,7 +222,7 @@ $(document).ready(function() {
   //"Submit"버튼
   $("#editSubmit").click(function() {
     currentWork["title"] = $("#editTitle").val();
-    currentWork["description"] = $("#edit").val();
+    currentWork["description"] = $("#editDescription").val();
     aCalandar[findDay(currentWork["id"])].push(popWork(currentWork["id"]));
     saveCalandar();
     alert("저장되었습니다.");
