@@ -12,13 +12,83 @@
     <div id="leftControl">
       <button id="addButton">Add</button>
     </div>
+
+    <div class="inputBox addBox" id="addBox">
+      <form action="./addRequest.php" method="POST" class="inputBox addBox" id="addForm">
+        <table>
+          <tr>
+            <td>day</td>
+            <td>
+              <select name="workDay" id="inputDay">
+                  <option value="Sun" selected="selected">Sun</option>
+                  <option value="Mon">Mon</option>
+                  <option value="Tue">Tue</option>
+                  <option value="Wed">Wed</option>
+                  <option value="Thu">Thu</option>
+                  <option value="Fri">Fri</option>
+                  <option value="Sat">Sat</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>title</td>
+            <td><input type="text" name="workTitle" id="inputTitle"></td>
+          </tr>
+          <tr>
+            <td>description</td>
+            <td><input type="text" name="workDescription" id="inputDescription"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="button" value="Save" id="addSave" name="request"> <input type="button" value="Cancel" id="addCancel" name="request"></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+    <div class="inputBox updateBox" id="updateBox">
+      <form action="./saveCalandar.php" method="POST" class="inputBox updateBox" id="updateForm">
+        <table>
+          <tr>
+            <td>day</td>
+            <td>
+              <select name="workDay" id="updateDay">
+                <option value="Sun" selected="selected">Sun</option>
+                <option value="Mon">Mon</option>
+                <option value="Tue">Tue</option>
+                <option value="Wed">Wed</option>
+                <option value="Thu">Thu</option>
+                <option value="Fri">Fri</option>
+                <option value="Sat">Sat</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>title</td>
+            <td><input type="text" name="workTitle" id="updateTitle"></td>
+          </tr>
+          <tr>
+            <td>description</td>
+            <td><input type="text" name="workDescription" id="updateDescription"></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input type="button" value="Edit" id="updateEdit" name="request">
+              <input type="button" value="Delete" id="updateDelete" name="request">
+              <input type="button" value="Submit" id="updateSubmit" name="request">
+              <input type="button" value="Cancel" id="updateCancel" name="request">
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
     <div class="inputBox joinBox" id="joinBox">
       <form action="./joinRequest.php" method="POST" class="inputBox joinBox" id="joinForm">
         <table>
           <tr>
             <td>id</td>
             <td><input type="text" name="userID" id="inputID"></td>
-            <td></td>
           </tr>
           <tr>
             <td>password</td>
@@ -56,13 +126,13 @@
         <th>Sat</th>
       </tr>
       <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td><ul id="SunList"></ul></td>
+        <td><ul id="MonList"></ul></td>
+        <td><ul id="TueList"></ul></td>
+        <td><ul id="WedList"></ul></td>
+        <td><ul id="ThuList"></ul></td>
+        <td><ul id="FriList"></ul></td>
+        <td><ul id="SatList"></ul></td>
       </tr>
     </table>
   </div>
