@@ -325,7 +325,7 @@ function showCalandar() {
     event.originalEvent.preventDefault();
   });
   $(".data").on("drop", function(event) {
-    if(event.originalEvent.target.tagName == "td") {
+    if(event.originalEvent.target.tagName == "TD") {
       event.preventDefault();
       var data = event.originalEvent.dataTransfer.getData("text");
       event.originalEvent.target.childNodes[0].appendChild(document.getElementById(data));
