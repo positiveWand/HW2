@@ -81,6 +81,27 @@ $(document).ready(function() {
     $(".editBox").show();
   });
 
+  $(".works").attr("draggable", true);
+  $(".works").on("dragstart", function(event) {
+    event.dataTransfer.setData("text", ev.target.id);
+  });
+  $(".works").on("dragover", function(event) {
+    event.preventDefault();
+  });
+  $(".works").on("drop", function(event) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("text");
+    event.target.parentNode.insertBefore(document.getElementById(data), target);
+  });
+  $(".data").on("dragover", function(event) {
+    event.preventDefault();
+  });
+  $(".data").on("drop", function(event) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("text");
+    event.target.childNodes[0].appendChild(document.getElementById(data));
+  });
+
   //$(".updateBox").show();
 
   //"AddBox"관련 처리
