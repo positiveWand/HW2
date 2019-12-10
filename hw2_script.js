@@ -83,23 +83,23 @@ $(document).ready(function() {
 
   $(".works").attr("draggable", true);
   $(".works").on("dragstart", function(event) {
-    event.dataTransfer.setData("text", ev.target.id);
+    event.originalEvent.dataTransfer.setData("text", ev.target.id);
   });
   $(".works").on("dragover", function(event) {
-    event.preventDefault();
+    event.originalEvent.preventDefault();
   });
   $(".works").on("drop", function(event) {
     event.preventDefault();
     var data = event.dataTransfer.getData("text");
-    event.target.parentNode.insertBefore(document.getElementById(data), target);
+    event.originalEvent.target.parentNode.insertBefore(document.getElementById(data), target);
   });
   $(".data").on("dragover", function(event) {
-    event.preventDefault();
+    event.originalEvent.preventDefault();
   });
   $(".data").on("drop", function(event) {
     event.preventDefault();
-    var data = event.dataTransfer.getData("text");
-    event.target.childNodes[0].appendChild(document.getElementById(data));
+    var data = event.originalEvent.dataTransfer.getData("text");
+    event.originalEvent.target.childNodes[0].appendChild(document.getElementById(data));
   });
 
   //$(".updateBox").show();
@@ -329,6 +329,7 @@ function showCalandar() {
       }
     }
   }
+  $(".works").attr("draggable", true);
 }
 
 function saveCalandar() {
