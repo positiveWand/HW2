@@ -1,12 +1,13 @@
 <?php
-$userID = $_POST["userID"];
-$sunList = $_POST["Sun"];
-$monList = $_POST["Mon"];
-$tueList = $_POST["Tue"];
-$wedList = $_POST["Wed"];
-$thuList = $_POST["Thu"];
-$friList = $_POST["Fri"];
-$satList = $_POST["Sat"];
+$targetJson = json_decode($_POST[targetJson]);
+$userID = $targetJson["userID"];
+$sunList = $targetJson["Sun"];
+$monList = $targetJson["Mon"];
+$tueList = $targetJson["Tue"];
+$wedList = $targetJson["Wed"];
+$thuList = $targetJson["Thu"];
+$friList = $targetJson["Fri"];
+$satList = $targetJson["Sat"];
 
 $dayList = array($sunList, $monList, $tueList, $wedList, $thuList, $friList, $satList);
 

@@ -314,7 +314,7 @@ function saveCalandar() {
   $.ajax({
     url: "./saveCalandar.php",
     type: "post",
-    data: aCalandar,
+    data: "targetJson="+JSON.stringify(aCalandar),
   }).done(function(data) {
     console.log("save "+data);
   });
