@@ -261,6 +261,7 @@ function getAndShowCalandar() {
     var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     var haveData = false;
 
+    clearCalandar();
     for(var i = 0; i < 7; i++){
       var dayWorks = jsonData[days[i]];
       if(dayWorks != undefined) {
@@ -270,7 +271,6 @@ function getAndShowCalandar() {
         }
       }
     }
-    clearCalandar();
 
     aCalandar["userID"] = $("#currentID").text();
     if(!haveData) {
