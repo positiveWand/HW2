@@ -15,7 +15,7 @@ $count = 0;
 
 foreach($dayList as $aDay) {
     foreach($aDay as $aWork) {
-        $workDay = $day[count]; //일정 "날짜"
+        $workDay = $day[$count]; //일정 "날짜"
         $workTitle = $aWork["title"]; //일정 "제목"
         $workDescription = $aWork["description"]; //일정 "내용"
         $calandarFile = fopen("./data/".$userID."_".$workDay.".txt", "w");

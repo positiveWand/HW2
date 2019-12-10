@@ -101,6 +101,8 @@ $(document).ready(function() {
       saveCalandar();
       showCalandar();
       alert("저장되었습니다.");
+      $(".addBox").hide();
+      addShown = false;
     }
 
   });
