@@ -95,23 +95,7 @@ $(document).ready(function() {
       alert("할 일의 제목과 내용을 입력해주세요.");
     }
     else { //정상적인 입력인 경우
-      //입력된 내용 서버에 저장
-      /*
-      alert($("#addForm").serialize());
-      $.ajax({
-        url: "./addRequest.php",
-        type: "post",
-        data: $("#addForm").serialize()+"&userID="+id,
-      }).done(function(data) {
-        if(data == "success") {
-          alert("저장되었습니다.");
-          $(".addBox").hide();
-
-          showCalandar();
-        }
-      });
-      */
-      appendWork(day, currentDate.getDate(), title, description);
+      aCalandar[day].push({"id" : currentDate.getTime(), "title" : title, "description" : description});
       saveCalandar();
       alert("저장되었습니다.");
     }
@@ -195,6 +179,8 @@ $(document).ready(function() {
         if(data == "success") {
           //alert("회원가입 성공");
           alert("회원가입이 완료되었습니다.")
+          $(".joinBox").hide();
+          joinShown = false;
         }
         else {
           //alert(data);
@@ -254,11 +240,12 @@ function validatePSW(aString) {
   return pswPattern.test(aString);
 }
 
+
 function getCalandar() {
   $.ajax({
     url: "./readCalandar.php",
     type: "post",
-    data: "userID="+id,
+    data: "userID="+$("#currentID").text(),
     datatype: "json"
   }).done(function(jsonData) {
     /*
@@ -287,7 +274,17 @@ function getCalandar() {
 }
 
 function showCalandar() {
-  $("#"+day+"List").append("<li id=\""+id+"\" class=\"works\">"+title+"</li>");
+  var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  for(var i = 0; i < 7; i++){
+    var dayWorks = aCalandar[days[i]];
+    for(var j = 0; j < dayWorks.length; j) {
+      var id = dayWorks[j]["id"];
+      var title = dayWorks[j]["title"];
+
+      $("#"+day+"List").append("<li id=\""+id+"\" class=\"works\">"+title+"</li>");
+    }
+  }
 }
 
 function saveCalandar() {
